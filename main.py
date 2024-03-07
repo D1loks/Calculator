@@ -29,21 +29,18 @@ def button_click(value):
             ent.delete(0, tk.END)
             ent.insert(tk.END, "Error")
     elif value == '☀️':
-        toggle_dark_mode()
+        dark_theme()
     else:
         ent.insert(tk.END, value)
 
 
-def toggle_dark_mode():
+def dark_theme():
     current_bg = root.cget('bg')
     new_bg = '#121212' if current_bg == '#F9F9F9' else '#F9F9F9'
-
-    current_text_color = ent.cget('fg')  # Get the current text color
+    current_text_color = ent.cget('fg')
     new_text_color = '#FFFFFF' if current_text_color == '#000000' else '#000000'
-
-    current_button_color = buttons[0].cget('bg')  # Get the current button color
+    current_button_color = buttons[0].cget('bg')
     new_button_color = '#333333' if current_button_color == '#DDDDDD' else '#DDDDDD'
-
     ent.configure(bg=new_bg, fg=new_text_color)
     root.configure(bg=new_bg)
 
